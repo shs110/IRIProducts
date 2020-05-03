@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace IRIProducts
 {
-    interface IPasrseFile
+    public interface IPasrseFile<T>
+        where T : class
+     
     {
+         Dictionary<System.String, T> ParseProductsFile(string FileName);
 
     }
 }

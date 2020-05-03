@@ -148,6 +148,8 @@
     <Compile Include="IParseFile.cs" />
     <Compile Include="MasterProduct.cs" />
     <Compile Include="MasterProductRepository.cs" />
+    <Compile Include="ProductInventory.cs" />
+    <Compile Include="ProductInventoryRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

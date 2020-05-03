@@ -10,9 +10,13 @@ namespace IRIProducts
     {
         public static void Main(string[] args)
         {
-            MasterProductRepository masterProductRepository = new MasterProductRepository();
-            masterProductRepository.ParseMasterProductsFile("C:/Users/SaadmanSayed/Desktop/IRI Technical Test/IRIProducts.txt");
-            masterProductRepository.Log();
+            //MasterProductRepository masterProductRepository = new MasterProductRepository();
+            //masterProductRepository.ParseProductsFile("C:/Users/SaadmanSayed/Desktop/IRI Technical Test/IRIProducts.txt");
+            //masterProductRepository.Log();
+
+            ProductInventoryRepository productInventoryRepository = new ProductInventoryRepository("C:/Users/SaadmanSayed/Desktop/IRI Technical Test/IRIProducts.txt");
+            productInventoryRepository.ParseProductsFile("C:/Users/SaadmanSayed/Desktop/IRI Technical Test/RetailerProducts.txt");
+            productInventoryRepository.Log();
         }
     }
 }

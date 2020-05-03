@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace IRIProducts
 {
-    class MasterProductRepository
+    class MasterProductRepository: IPasrseFile<MasterProduct>
     {
         
-        HashSet<MasterProduct> masterProductsMap = new HashSet<MasterProduct>();
-        public HashSet<MasterProduct> ParseMasterProductsFile(string FileName)
+        Dictionary<System.String, MasterProduct> masterProductsMap = new Dictionary<System.String, MasterProduct> ();
+        public Dictionary<System.String, MasterProduct> ParseProductsFile(string FileName)
         {
             var lines = File.ReadAllLines(FileName);
             MasterProduct masterProduct = new MasterProduct();
@@ -22,7 +22,7 @@ namespace IRIProducts
                 var col = line.Split(',');
                 masterProduct = new MasterProduct(int.Parse(col[0]),col[1]);
        
-                masterProductsMap.Add(masterProduct);
+                masterProductsMap.Add(col[0],masterProduct);
             }
 
             return masterProductsMap;
@@ -33,7 +33,8 @@ namespace IRIProducts
         {
             foreach(var product in masterProductsMap)
             {
-                Console.WriteLine(product.Log());
+
+                Console.WriteLine(product.Value.Log());
             }
         }
 
