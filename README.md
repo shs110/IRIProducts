@@ -1,5 +1,10 @@
 # IRIProducts
+
+To run the solution, simply load it up in Visual Studio and run the main Program.cs file. For testing purposes I put the the 2 sample text files in the project folder. If you want to use different files simply place it in the project folder and rename the IRIProducts.txt and RetailerProducts.txt parameters. The output prints to console all the unique products and unique code types for them. 
+
 ### Assumptions
+
+The master products file will have all the product codes and details of the ones supplied in the Retailer.txt file.
 
  The Data will be supplied in a text file with comma separated values in the same order as in the sample txt and Word document:
 
@@ -7,7 +12,7 @@
 RetailerName, 
 RetailerProductCode, 
 RetailerProductCodeType, 
-DateReceived<b>
+DateReceived</b>
 
  I noticed hat more than one retailer has the same product code type for a single product with different dates received. In that case, I assumed I have to take the latest code type amongst the ones supplied by different retailers.
 
