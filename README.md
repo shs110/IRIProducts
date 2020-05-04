@@ -21,4 +21,7 @@ The second is the Product Inventory map which also has the product ID as the key
 
 Since Hashmap lookups run in O(1) time, we only need to consider the number of lines in the file. We initially run through the Master list to populate the Master hashmap and then the Retailer Product hashmap. Hence, both the space and time complexity of this solution is O(M+N) where M is the number of lines in Master products file and N is the Number of lines in Retailer Products file
 
+## Coding Practices
+
+I tried to follow the repository pattern here where I have a separate class to populate the hashmaps and ensure that the classes only have the responsibilities to supply the attributes. I also tried to incorporate a few aspects of SOLID design principles by implenting 2 interfaces i.e the ILoggable to print class data and IParseFile to populate the 2 hashmaps in the 2 repositories. I would have liked to further decouple my code and write more Unit tests especially for the ProductInventoryRepository Class for better readibility.
 
