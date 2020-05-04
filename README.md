@@ -1,15 +1,15 @@
 # IRIProducts
 ### Assumptions
 
-The Data will be supplied in a text file with comma separated values in the same order as in the sample txt and Word document:
+ The Data will be supplied in a text file with comma separated values in the same order as in the sample txt and Word document:
 
-ProductId, 
+<b>ProductId, 
 RetailerName, 
 RetailerProductCode, 
 RetailerProductCodeType, 
-DateReceived, 
+DateReceived<b>
 
-I noticed more than one retailer has the same product code type for a single product with different dates received. In that case, I assumed I have to take the latest code type amongst the ones supplied by different retailers.
+ I noticed hat more than one retailer has the same product code type for a single product with different dates received. In that case, I assumed I have to take the latest code type amongst the ones supplied by different retailers.
 
 ## Algorithm
 
