@@ -7,7 +7,7 @@ using System.Windows.Documents;
 
 namespace IRIProducts
 {
-    class ProductInventory
+    class ProductInventory:ILoggable
     {
         public ProductInventory()
         {

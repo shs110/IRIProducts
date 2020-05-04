@@ -15,16 +15,22 @@ namespace IRIProducts
         Dictionary<System.String, MasterProduct> masterProductsMap = new Dictionary<System.String, MasterProduct> ();
         public Dictionary<System.String, MasterProduct> ParseProductsFile(string FileName)
         {
-            var lines = File.ReadAllLines(FileName);
-            MasterProduct masterProduct = new MasterProduct();
-            foreach (var line in lines)
+            try
             {
-                var col = line.Split(',');
-                masterProduct = new MasterProduct(int.Parse(col[0]),col[1]);
-       
-                masterProductsMap.Add(col[0],masterProduct);
-            }
+                var lines = File.ReadAllLines(FileName);
+                MasterProduct masterProduct = new MasterProduct();
+                foreach (var line in lines)
+                {
+                    var col = line.Split(',');
+                    masterProduct = new MasterProduct(int.Parse(col[0]), col[1]);
 
+                    masterProductsMap.Add(col[0], masterProduct);
+                }
+            }
+            catch(FileNotFoundException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             return masterProductsMap;
 
         }

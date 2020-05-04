@@ -146,6 +146,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ILoggable.cs" />
     <Compile Include="IParseFile.cs" />
     <Compile Include="MasterProduct.cs" />
     <Compile Include="MasterProductRepository.cs" />

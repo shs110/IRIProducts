@@ -4,7 +4,7 @@ using System.Text;
 
 namespace IRIProducts
 {
-    public class MasterProduct
+    public class MasterProduct:ILoggable
     {
         public MasterProduct()
         {
