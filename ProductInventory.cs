@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace IRIProducts
 {
@@ -25,7 +26,7 @@ namespace IRIProducts
         public string RetailerName { get; set; }
         public string RetailerProductCode { get; set; }
 
-        public Dictionary<string, DateTime> CodeTypeDateMap = new Dictionary<string, DateTime>();
+        public Dictionary<string, Tuple<DateTime, string>> CodeTypeDateMap = new Dictionary<string, Tuple<DateTime, string>>();
 
         public string Log()
         {
@@ -36,7 +37,7 @@ namespace IRIProducts
 
             foreach(var item in CodeTypeDateMap)
             {
-                outputString += logString + item.Key + ", " + RetailerProductCode + ", "+ item.Value +"\n";
+                outputString += logString + item.Key + ", "+ item.Value.Item2 +"\n";
             }
 
             return outputString;

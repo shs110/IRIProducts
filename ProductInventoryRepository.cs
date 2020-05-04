@@ -46,7 +46,7 @@ namespace IRIProducts
                     ProductInventory productInventory = new ProductInventory(ProductId, ProductName);
                     productInventory.RetailerName = RetailerName;
                     productInventory.RetailerProductCode = RetailerProductCode;
-                    productInventory.CodeTypeDateMap.Add(RetailerProductCodeType,DateReceived);
+                    productInventory.CodeTypeDateMap.Add(RetailerProductCodeType,Tuple.Create(DateReceived,RetailerProductCode));
                     productInventoryMap.Add(ProductId, productInventory);
                 }
                 else
@@ -54,14 +54,14 @@ namespace IRIProducts
                     var product = productInventoryMap[ProductId];
                     if (!product.CodeTypeDateMap.ContainsKey(RetailerProductCodeType))
                     {
-                        product.CodeTypeDateMap.Add(RetailerProductCodeType,DateReceived);
+                        product.CodeTypeDateMap.Add(RetailerProductCodeType, Tuple.Create(DateReceived, RetailerProductCode));
                         product.RetailerProductCode = RetailerProductCode;
                     }
                     else
                     {
-                        if (DateReceived > product.CodeTypeDateMap[RetailerProductCodeType])
+                        if (DateReceived > product.CodeTypeDateMap[RetailerProductCodeType].Item1)
                         {
-                            product.CodeTypeDateMap[RetailerProductCodeType] = DateReceived;
+                            product.CodeTypeDateMap[RetailerProductCodeType] = Tuple.Create(DateReceived,RetailerProductCode);
                             product.RetailerProductCode = RetailerProductCode;
                         }
                     }
